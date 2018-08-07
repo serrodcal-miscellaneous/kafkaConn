@@ -17,10 +17,11 @@
 ~  under the License.
 -->
 
-<connector>
-    <component name="kafkaPublisher" package="org.wso2.carbon.esb.connector">
-        <dependency component="kafka_config"/>
-        <dependency component="kafka_produce"/>
-        <description>Kafka transport connector library</description>
-    </component>
-</connector>
+<template xmlns="http://ws.apache.org/ns/synapse" name="publishMessages">
+    <parameter name="topic" description="maintains feeds of messages in categories"/>
+    <parameter name="message" description="the messages can be xml or json message"/>
+    <parameter name="partitionNo" description="The value of the partition Number"/>
+    <sequence>
+        <class name="org.wso2.carbon.connector.KafkaProduceConnector"/>
+    </sequence>
+</template>

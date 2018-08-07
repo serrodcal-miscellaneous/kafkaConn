@@ -17,10 +17,12 @@
 ~  under the License.
 -->
 
-<connector>
-    <component name="kafkaPublisher" package="org.wso2.carbon.esb.connector">
-        <dependency component="kafka_config"/>
-        <dependency component="kafka_produce"/>
-        <description>Kafka transport connector library</description>
-    </component>
-</connector>
+<component name="kafka_config" type="synapse/template">
+    <subComponents>
+        <component name="init">
+            <file>init.xml</file>
+            <description>Configure the Kafka producer</description>
+        </component>
+    </subComponents>
+</component>
+
