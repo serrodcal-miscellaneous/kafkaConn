@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  zookeeper:
+      image: wurstmeister/zookeeper
+      hostname: zookeeper
+      ports:
+        - 2181:2181
+  kafka:
+      image: wurstmeister/kafka
+      hostname: kafka
+      ports:
+        - 9092:9092
+      environment:
+        KAFKA_ADVERTISED_HOST_NAME: kafka
+        KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+  esb:
+      image: serrodcal/wso2esb5:0.1.0
+      hostname: esb
+      ports:
+        - 8280:8280
+        - 8243:8243
+        - 9763:9763
+        - 9443:9443
+        - 19444:19444
