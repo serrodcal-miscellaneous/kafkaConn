@@ -1,0 +1,19 @@
+<api xmlns="http://ws.apache.org/ns/synapse" name="KafkaPublisherAPI" context="/kafka/publish/v1">
+   <resource methods="POST" url-mapping="/send">
+      <inSequence>
+         <log level="full">
+            <property name="API" value="KAFKA!"/>
+         </log>
+         <kafkaPublisher.init>
+            <bootstrapServers>kafka:9092</bootstrapServers>
+            <keySerializerClass>org.apache.kafka.common.serialization.StringSerializer</keySerializerClass>
+            <valueSerializerClass>org.apache.kafka.common.serialization.StringSerializer</valueSerializerClass>
+            <maxPoolSize>100</maxPoolSize>
+         </kafkaPublisher.init>
+         <kafkaPublisher.publishMessages>
+            <topic>test</topic>
+         </kafkaPublisher.publishMessages>
+      </inSequence>
+   </resource>
+</api>
+                        
