@@ -1,4 +1,7 @@
-<api xmlns="http://ws.apache.org/ns/synapse" name="KafkaPublisherAPI" context="/kafka/publish/v1">
+<?xml version="1.0" encoding="UTF-8"?>
+<api xmlns="http://ws.apache.org/ns/synapse"
+     name="KafkaPublisherAPI"
+     context="/kafka/publish/v1">
    <resource methods="POST" url-mapping="/send">
       <inSequence>
          <log level="full">
@@ -16,4 +19,3 @@
       </inSequence>
    </resource>
 </api>
-                        
