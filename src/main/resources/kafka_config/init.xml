@@ -177,6 +177,6 @@
         <property expression="$func:sslTrustmanagerAlgorithm" name="kafka.sslTrustmanagerAlgorithm"/>
         <property expression="$func:maxPoolSize" name="kafka.maxPoolSize"/>
 
-        <class name="org.wso2.carbon.connector.KafkaConfigConnector"/>
+        <class name="org.wso2.carbon.esb.connector.KafkaConfigConnector"/>
     </sequence>
 </template>
