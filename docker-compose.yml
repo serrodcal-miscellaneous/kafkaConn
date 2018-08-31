@@ -27,3 +27,5 @@ services:
         - ./lib/:/opt/wso2esb-5.0.0/repository/components/lib/
         - ./api/:/opt/wso2esb-5.0.0/repository/deployment/server/synapse-configs/default/api/
         - ./connector/:/opt/wso2esb-5.0.0/repository/deployment/server/synapse-libs/
+        - ./config/:/opt/wso2esb-5.0.0/repository/conf/tpa/
+      command: bin/wso2server.sh -DosgiConsole=19444 -Xms2048m -Xmx2048m -Dconfig.file=/opt/wso2esb-5.0.0/repository/conf/tpa/application.conf

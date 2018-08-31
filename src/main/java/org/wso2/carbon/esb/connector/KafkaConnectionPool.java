@@ -1,5 +1,7 @@
 package org.wso2.carbon.esb.connector;
 
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.kafka.clients.producer.KafkaProducer;
@@ -21,6 +23,13 @@ public class KafkaConnectionPool {
      * @param messageContext the message context.
      */
     public static void initialize(MessageContext messageContext) {
+
+        log.info("Viva er beti");
+
+        Config conf = ConfigFactory.load();
+        String prueba = conf.getString("key");
+        log.info("########### " + prueba);
+
         //Here we can initialize all the information that we need
         while (!isConnectionPoolFull(messageContext)) {
             log.info("Connection Pool is NOT full. Proceeding with adding new connections");

@@ -18,6 +18,8 @@
 
 package org.wso2.carbon.esb.connector;
 
+import com.typesafe.config.Config;
+import com.typesafe.config.ConfigFactory;
 import org.apache.commons.lang.StringUtils;
 import org.apache.synapse.MessageContext;
 import org.wso2.carbon.connector.core.AbstractConnector;
@@ -29,6 +31,7 @@ import org.wso2.carbon.connector.core.ConnectException;
 public class KafkaConfigConnector extends AbstractConnector {
 
     public void connect(MessageContext messageContext) throws ConnectException {
+
         try {
             String ack = (String) messageContext.getProperty(KafkaConnectConstants.KAFKA_ACKS);
             String keySerializationClass = (String) messageContext
