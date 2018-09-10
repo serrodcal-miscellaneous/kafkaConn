@@ -24,7 +24,8 @@ services:
         - 9443:9443
         - 19444:19444
       volumes:
-        - ./lib/:/opt/wso2esb-5.0.0/repository/components/lib/
+        - ./bundle/target/kafka-conector-bundle-1.0.0.jar:/opt/wso2esb-5.0.0/repository/components/dropins/kafka-conector-bundle-1.0.0.jar
+        #- ./lib/:/opt/wso2esb-5.0.0/repository/components/lib/
         - ./api/:/opt/wso2esb-5.0.0/repository/deployment/server/synapse-configs/default/api/
         - ./connector/:/opt/wso2esb-5.0.0/repository/deployment/server/synapse-libs/
         - ./config/:/opt/wso2esb-5.0.0/repository/conf/tpa/
